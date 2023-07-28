@@ -5,6 +5,11 @@ pipeline {
             steps {
                 sh 'mvn clean install'
             }
+            stage('docker build') {
+            steps {
+                sh 'docker build -t nehajaiswal1998/spring-petclinic:latest .'
+            }
+        } 
         }
     }
 }
